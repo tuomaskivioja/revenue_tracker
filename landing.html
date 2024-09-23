@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <!-- Link to the external tracker script -->
+    <script src="tracker_script.js" defer></script>
+</head>
+<body>
+    <h1>Welcome to the Landing Page</h1>
+    <p>This page is testing the tracking script that captures user data like IP address and browser user agent information.</p>
+
+    <!-- Email form -->
+    <form id="emailForm">
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Purchase Button -->
+    <h2>Complete Your Purchase</h2>
+    <button id="purchaseButton">Purchase</button>
+
+    <script>
+        // Redirect to the thank you page when the purchase button is clicked
+        document.getElementById('purchaseButton').addEventListener('click', function() {
+            window.location.href = 'thank-you.html';  // Change this path if needed
+        });
+    </script>
+</body>
+</html>

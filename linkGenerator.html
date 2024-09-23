@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source-only Tracking Link Generator</title>
+</head>
+<body>
+    <h1>Source-only Tracking Link Generator</h1>
+    <form id="sourceForm">
+        <label>Source:</label><br>
+        <input type="text" id="source" placeholder="e.g. google, facebook" required><br><br>
+
+        <button type="button" onclick="generateLink()">Generate Tracking Link</button>
+    </form>
+
+    <h2>Generated Tracking Link:</h2>
+    <p id="generatedLink"></p>
+
+    <script>
+        function generateLink() {
+            const baseURL = "http://127.0.0.1:5000";  // Change to your server URL
+            const source = document.getElementById("source").value;
+
+            const trackingLink = `${baseURL}/track?source=${encodeURIComponent(source)}`;
+
+            document.getElementById("generatedLink").innerText = trackingLink;
+        }
+    </script>
+</body>
+</html>
